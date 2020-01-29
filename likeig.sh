@@ -11,7 +11,7 @@ N=$(tput sgr0)
 B=$(tput setaf 6)
 Y=$(tput setaf 3)
 function login() {
-	    printf "\n${H}[+]${N}Logining in..\n"
+	printf "\n${H}[+]${N}Logining in..\n"
         ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' -A "${useragent}" \
         -H 'origin: https://www.instagram.com' \
         -H 'authority: www.instagram.com' \
