@@ -52,7 +52,7 @@ function idd() {
         -H "x-instagram-ajax: $rolout" \
         -H 'content-type: application/x-www-form-urlencoded' \
         -H 'accept: */*' -H 'authority: www.instagram.com' -H 'content-length: 0' --compressed|
-        grep 'instagram://media?id=' | grep -oP 'id=\K.*?(?=")'
+        grep 'instagram://media?id=' | grep -oP 'id=\K.*(?=")'
 }
 function open(){
           for URL in $(cat fot.txt); do
