@@ -1,2 +1,5 @@
 # Masslike-instagram
-like semua nya hahahahaha sampai mapusssssssssss
+apa saja yang perlu ??
+```
+apt-get install grep && apt-get install curl
+```
