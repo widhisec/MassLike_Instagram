@@ -10,6 +10,7 @@ M=$(tput setaf 1)
 N=$(tput sgr0)
 B=$(tput setaf 6)
 Y=$(tput setaf 3)
+time=$(date +%s%N|cut -b1-13)
 function login() {
 	printf "\n${H}[+]${N}Logining in..\n"
         ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' -A "${useragent}" \
@@ -17,30 +18,23 @@ function login() {
         -H 'authority: www.instagram.com' \
         -H 'upgrade-insecure-requests: 1' \
         -H 'accept-language: en-US,en;q=0.9' --compressed --silent)
-        rur=$(echo -e "$ambil" | grep -Po '(?<=rur=)[^;]*')
-        mid=$(echo -e "$ambil" | grep -Po '(?<=mid=)[^;]*')
         csrf=$(echo -e "$ambil" | grep -Po '(?<=csrftoken=)[^;]*')
-        mcd=$(echo -e "$ambil" | grep -Po '(?<=mcd=)[^;]*')
-        rolout=$(echo -e "$ambil" | grep -Po '(?<=rollout_hash":")[^"]*')
-        login=$(curl -D - 'https://www.instagram.com/accounts/login/ajax/' -A "${useragent}" \
-        -H 'origin: https://www.instagram.com' \
-        -H 'x-requested-with: XMLHttpRequest' \
-        -H "cookie: rur=$rur; mid=$mid; csrftoken=$csrf; mcd=$mcd" \
-        -H "x-csrftoken: $csrf" \
-        -H "x-instagram-ajax: $rolout" \
-        -H 'content-type: application/x-www-form-urlencoded' \
-        -H 'accept: */*' \
+        login=$(curl -X POST "https://www.instagram.com/accounts/login/ajax/" \
+        -H 'Content-Type: application/x-www-form-urlencoded' \
+        -H "Cookie: csrftoken=${csrf}" \
         -H 'referer: https://www.instagram.com/accounts/login/' \
-        -H 'authority: www.instagram.com' --data "username=$1&password=$2&queryParams=%7B%7D" --compressed --silent --location)
-        check=$(echo -e "$login" | grep -Po '(?<=checkpoint_url": ")[^"]*')
-        usid=$(echo -e "$login" | grep -Po '(?<=userId": ")[^"]*')
-        isauth=$(echo -e "$login" | grep -Po '(?<=authenticated": )[^,]*')
-        session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')
+        -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36' \
+        -H "x-csrftoken: ${csrf}" \
+        -H 'x-requested-with: XMLHttpRequest' --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -s)     
+        check=$(echo -e "$login" | grep -Po '(?<=checkpoint_url":")[^"]*')
+        usid=$(echo -e "$login" | grep -Po '(?<=userId":")[^"]*')
+        isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')
+        #session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')
         if [[ $isauth =~ "true" ]];then
             printf "${H}[+]${N}Login Success..\n"
             printf "${H}[+]${N}User ID : $usid\n"
         else
-            printf "[GAGAL LOGIN]\n"
+            printf "[-]{M}GAGAL LOGIN]{$\n"
         fi
 }
 function idd() { 
