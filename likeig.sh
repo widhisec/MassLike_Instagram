@@ -97,7 +97,7 @@ kamu=$(expr $hitung % 1)
 if [[ $kamu == 0 && $hitung > 0 ]]; then
 sleep 1
 fi
-login $EMAIL $PASS $penambahan $number
+login $1 $2 $penambahan $number
 gete &
 hitung=$[$hitung+1]
 done
