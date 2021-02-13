@@ -11,3 +11,5 @@ apt-get install ncurses-utils
 ```
 ### Screenshot
 <img src="https://raw.githubusercontent.com/widhisec/MassLike_Instagram/master/foto/autolike.png"/>
+<p align=center>
+<img src="https://img.shields.io/badge/bash-shell-green"/><br>
