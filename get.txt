@@ -1,0 +1,6 @@
+n (re.findall('(?<="shortcode":")[^"]*',ses.text)):
+              file.write("https://instagram.com/p/%s\n" % (x))
+    		
+
+if __name__ == '__main__':
+	biasalah(f"https://www.instagram.com/{sys.argv[2]}")
