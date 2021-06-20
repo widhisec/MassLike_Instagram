@@ -45,7 +45,7 @@ function idd() {
         -H "x-csrftoken: $csrf" \
         -H "x-instagram-ajax: $rolout" \
         -H 'content-type: application/x-www-form-urlencoded' \
-        -H 'accept: */*' -H 'authority: www.instagram.com' -H 'content-length: 0' --compressed|
+        -H 'accept: */*' --compressed|
         grep 'instagram://media?id=' | grep -oP 'id=\K.*(?=")'
 }
 function open(){
@@ -62,7 +62,10 @@ function gete(){
            -A "${useragent}" \
            -H 'accept-language: en-US,en;q=0.9' \
            -H 'x-requested-with: XMLHttpRequest' \
-           -H "cookie: mcd=$mcd; csrftoken=$csrf; ds_user_id=$usid; sessionid=$session; -H "x-csrftoken: $csrf" -H 'content-type: application/x-www-form-urlencoded' -H 'accept: */*' -H 'authority: www.instagram.com' -H 'content-length: 0' --compressed)
+           -H "cookie: mcd=$mcd; csrftoken=$csrf; ds_user_id=$usid; sessionid=$session; "
+           -H "x-csrftoken: $csrf" 
+           -H 'content-type: application/x-www-form-urlencoded' 
+           -H 'accept: */*' -H 'authority: www.instagram.com' --compressed)
         status=$(echo -e "$x" | grep -Po '(?<=status": ")[^"]*')
                  printf "${H}[#]${N}$status (mdaID) -> $ea${N}\n"
     done
