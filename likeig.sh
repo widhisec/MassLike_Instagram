@@ -34,7 +34,7 @@ function login() {
             printf "${H}[+]${N}Login Success..\n"
             printf "${H}[+]${N}User ID : $usid\n"
         else
-            printf "[-]{M}GAGAL LOGIN]{$\n"
+            printf "[-]${M}GAGAL LOGIN]${N}\n"
         fi
 }
 function idd() { 
