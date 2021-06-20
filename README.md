@@ -17,3 +17,10 @@ apt-get install ncurses-utils
 **⚠ WARNING: Temporarily cannot be used**
  because this tool is not stable
  Thank you for visiting
+
+ 
+### Changed
+
+- Fixed typos in Shell execution
+- Fixed unexpected EOF
+ 
