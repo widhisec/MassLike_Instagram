@@ -24,4 +24,4 @@ apt-get install python
 
 - Fixed typos in Shell execution
 - Fixed unexpected EOF
- 
+- Fixed failed login
