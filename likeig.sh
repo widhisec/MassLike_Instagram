@@ -12,7 +12,7 @@ B=$(tput setaf 6)
 Y=$(tput setaf 3)
 time=$(date +%s%N|cut -b1-13)
 function login() {
-	printf "\n${H}[+]${N}Logining in..\n"
+	      printf "\n${H}[+]${N}Logining in..\n"
         ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' \
          -H "user-agent: $useragent" \
          -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' \
@@ -46,7 +46,7 @@ function idd() {
         -H "x-csrftoken: $csrf" \
         -H "x-instagram-ajax: $rolout" \
         -H 'content-type: application/x-www-form-urlencoded' \
-        -H 'accept: */*' --compressed|
+        -H 'accept: */*' -H 'authority: www.instagram.com' -H 'content-length: 0' --compressed|
         grep 'instagram://media?id=' | grep -oP 'id=\K.*(?=")'
 }
 function open(){
@@ -63,10 +63,7 @@ function gete(){
            -A "${useragent}" \
            -H 'accept-language: en-US,en;q=0.9' \
            -H 'x-requested-with: XMLHttpRequest' \
-           -H "cookie: mcd=$mcd; csrftoken=$csrf; ds_user_id=$usid; sessionid=$session; "
-           -H "x-csrftoken: $csrf" 
-           -H 'content-type: application/x-www-form-urlencoded' 
-           -H 'accept: */*' -H 'authority: www.instagram.com' --compressed)
+           -H "cookie: mcd=$mcd; csrftoken=$csrf; ds_user_id=$usid; sessionid=$session; rur=$rur" -H "x-csrftoken: $csrf" -H "x-instagram-ajax: $rolout" -H 'content-type: application/x-www-form-urlencoded' -H 'accept: */*' -H 'authority: www.instagram.com' -H 'content-length: 0' --compressed)
         status=$(echo -e "$x" | grep -Po '(?<=status": ")[^"]*')
                  printf "${H}[#]${N}$status (mdaID) -> $ea${N}\n"
     done
@@ -101,7 +98,7 @@ kamu=$(expr $hitung % 1)
 if [[ $kamu == 0 && $hitung > 0 ]]; then
 sleep 1
 fi
-login $1 $2 $penambahan $number
+login $EMAIL $PASS $penambahan $number
 gete &
 hitung=$[$hitung+1]
 done
