@@ -17,15 +17,16 @@ function login() {
         -H 'origin: https://www.instagram.com' \
         -H 'authority: www.instagram.com' \
         -H 'upgrade-insecure-requests: 1' \
-        -H 'accept-language: en-US,en;q=0.9' --compressed --silent)
+        -H 'accept-language: en-US,en;q=0.9' --compressed -sL)
         csrf=$(echo -e "$ambil" | grep -Po '(?<=csrftoken=)[^;]*')
-        login=$(curl -X POST "https://www.instagram.com/accounts/login/ajax/" \
-        -H 'Content-Type: application/x-www-form-urlencoded' \
-        -H "Cookie: csrftoken=${csrf}" \
-        -H 'referer: https://www.instagram.com/accounts/login/' \
-        -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36' \
-        -H "x-csrftoken: ${csrf}" \
-        -H 'x-requested-with: XMLHttpRequest' --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -s)     
+        login=$(curl -D - 'https://www.instagram.com/accounts/login/ajax/' \
+	 -H 'origin: https://www.instagram.com' \
+         -H 'x-requested-with: XMLHttpRequest' \
+         -H "user-agent: ${useragent}" \
+         -H "x-csrftoken: ${csrf}" \
+         -H 'content-type: application/x-www-form-urlencoded' \
+         -H 'accept: */*' \
+         -H 'referer: https://www.instagram.com/accounts/login/' --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL)     
         check=$(echo -e "$login" | grep -Po '(?<=checkpoint_url":")[^"]*')
         usid=$(echo -e "$login" | grep -Po '(?<=userId":")[^"]*')
         isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')
