@@ -58,7 +58,7 @@ function gete(){
       v=$(open)
        echo -e "$v" >> NAH.txt
        for ea in $(cat NAH.txt);do
-       x=$(curl -s "https://www.instagram.com/web/likes/$ea/like/" -X POST \
+       x=$(curl -s "https://www.instagram.com/web/likes/$ea/like/" -X 'POST' \
            -H 'origin: https://www.instagram.com' \
            -A "${useragent}" \
            -H 'accept-language: en-US,en;q=0.9' \
