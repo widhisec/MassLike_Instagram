@@ -31,10 +31,12 @@ function login() {
         usid=$(echo -e "$login" | grep -Po '(?<=userId":")[^"]*')
         isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')
         session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')
+	err=$(echo -e "$login" |grep -Po '(?<=message":")[^"]*')
         if [[ $isauth =~ "true" ]];then
             printf "${H}[+]${N}Login Success..\n"
             printf "${H}[+]${N}User ID : $usid\n"
         else
+	echo  $err
             printf "[-]${M}GAGAL LOGIN]${N}\n"
         fi
 }
