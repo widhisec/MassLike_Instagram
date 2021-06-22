@@ -8,7 +8,7 @@
   menjaadikan seperti auto like kalian mendapatkan akun sebanyak itu dengan cara mencurry atau dengan cara seperi phising dapat menghasilkan akun banyak tergantung dari diri sendiri cara menyebarkan dan lainnya (TANGGUNG JAWAB SENDIRI) heheh XD sekian dari saya somoga tidak ada masalah sedikit pun yaa  </p>
 
 
-## Instalasi
+## Installation
 ```Shell
 apt-get install grep 
 apt-get install curl
