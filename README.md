@@ -25,3 +25,4 @@ contact me, thank you for visiting
 - Fixed typos in Shell execution
 - Fixed unexpected EOF
 - Fixed failed login
+- Fixed can't like
