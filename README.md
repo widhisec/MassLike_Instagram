@@ -40,3 +40,9 @@ contact me, thank you for visiting
 - Fork this repo.
 - Add new features.
 - Pull requests
+
+## License
+
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+<br/>
+[MIT](./LICENSE)
