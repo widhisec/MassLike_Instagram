@@ -1,4 +1,6 @@
 # Masslike-instagram
+<img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
+
 ![Version](https://img.shields.io/badge/version-0.1-brightgreen.svg?style=flat-square)
 ![Version](https://img.shields.io/badge/release-stable-green.svg?style=flat-square)
 
@@ -29,8 +31,6 @@ contact me, thank you for visiting
 - Fixed unexpected EOF
 - Fixed failed login
 - Fixed can't like
- 
-<img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
  
 ## Just run
 `bash likeig.sh`
