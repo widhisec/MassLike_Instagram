@@ -41,7 +41,7 @@ contact me, thank you for visiting
 ## Just run
 `bash likeig.sh`
 
-### Contribution
+##  Contribution
 - Fork this repo.
 - Add new features.
 - Pull requests
