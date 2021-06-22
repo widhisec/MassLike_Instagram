@@ -40,10 +40,10 @@ contact me, thank you for visiting
 ## Just run
 `bash likeig.sh`
 
-##  Contribution
-- Fork this repo.
-- Add new features.
-- Pull requests
+## Contribution
+- Fork this repo. 🤝
+- Add new features. ✊
+- Pull requests. 😁
 
 ## License
 
