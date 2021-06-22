@@ -17,13 +17,13 @@ function log() {
     }
 function random(){
                OLDIFS=$IFS
-IFS=$(echo -en "\n\b")
-create="akun.txt"
-for file in $(awk 'END {print NR}' $create)
-do
-    randomNumber=$(($RANDOM*$file))
-done
-IFS=$OLDIFS
+               IFS=$(echo -en "\n\b")
+               create="akun.txt"
+               for file in $(awk 'END {print NR}' $create)
+               do
+                   randomNumber=$(($RANDOM*$file))
+               done
+               IFS=$OLDIFS
 }
 function login() {
          find=$(find *.cookies -type f)
