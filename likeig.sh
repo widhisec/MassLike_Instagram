@@ -23,7 +23,7 @@ IFS=$OLDIFS
 }
 function login() {
          find=$(find *.cookies -type f)
-         if [[ -n "$find" ]]; then
+         if ! [[ -e "$find" ]]; then
             random
             printf "\n${H}[+]${N}Logining in..\n"
             local ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' \
