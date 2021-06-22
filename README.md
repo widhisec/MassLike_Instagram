@@ -1,4 +1,7 @@
 # Masslike-instagram
+![Version](https://img.shields.io/badge/version-0.1-brightgreen.svg?style=flat-square)
+![Version](https://img.shields.io/badge/release-stable-green.svg?style=flat-square)
+
  <p align="center">tools ini dibuat dengan bash shell sederhana berfungsi untuk mempermudah kumpulan akun yang banyak bisa digunakan secara massal (semua)
   menjaadikan seperti auto like kalian mendapatkan akun sebanyak itu dengan cara mencurry atau dengan cara seperi phising dapat menghasilkan akun banyak tergantung dari diri sendiri cara menyebarkan dan lainnya (TANGGUNG JAWAB SENDIRI) heheh XD sekian dari saya somoga tidak ada masalah sedikit pun yaa  </p>
 
@@ -28,4 +31,11 @@ contact me, thank you for visiting
 - Fixed can't like
  
 <img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
+ 
+## Just run
+`bash likeig.sh`
 
+### Contribution
+- Fork this repo.
+- Add new features.
+- Pull requests
