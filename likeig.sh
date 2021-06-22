@@ -63,7 +63,7 @@ function idd() {
         -H "x-csrftoken: $csrf" \
         -H "x-instagram-ajax: $rolout" \
         -H 'content-type: application/x-www-form-urlencoded' \
-        -H 'accept: */*' --compressed|grep -Po '(?<=__typename":"GraphImage","id":").*?(?=")'
+        -H 'accept: */*' --compressed|grep -Po '(?<=__typename":"GraphImage","id":").*?(?=")'|sort -u
 }
 function oke(){
           Fruits=('csrftoken' 'ig_did' 'sessionid')
@@ -89,9 +89,9 @@ function open(){
 function gete(){
   oke
   echo "${d[*]}"
-   csrf=$(cat 1793.cookies| grep -Po '(?<=csrftoken=)[^;]*')
- did=$(cat 1793.cookies|grep -Po '(?<=ig_did=)[^;]*')
- ses=$(cat 1793.cookies|grep -Po '(?<=sessionid=)[^;]*')
+   csrf=$(cat 6071.cookies| grep -Po '(?<=csrftoken=)[^;]*')
+ did=$(cat 6071.cookies|grep -Po '(?<=ig_did=)[^;]*')
+ ses=$(cat 6071.cookies|grep -Po '(?<=sessionid=)[^;]*')
       v=$(open)
        echo -e "$v" >> NAH.txt
        for ea in $(cat NAH.txt);do
@@ -105,7 +105,7 @@ function gete(){
   -H "cookie: ig_did=${did};rur=VLL; csrftoken=${csrf}; ds_user_id=${usid}; sessionid=${ses}" --compressed -s
 )
         status=$(echo -e "$x" |grep -Po '(?<=status":")[^"]*')
-                 printf "${H}[#]${N}$x (mdaID) -> $ea${N}\n"
+                 printf "${H}[#]${N}$status (mdaID) -> $ea${N}\n"
     done
     rm -rf NAH.txt
 }
