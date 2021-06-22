@@ -31,6 +31,7 @@ contact me, thank you for visiting
 - Fixed unexpected EOF
 - Fixed failed login
 - Fixed can't like
+- Fixed error while doing regex
  
 ## Just run
 `bash likeig.sh`
