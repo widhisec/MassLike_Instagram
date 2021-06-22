@@ -92,7 +92,6 @@ function open(){
 }
 function gete(){
   oke
-  echo "${d[*]}"
    csrf=$(cat 6071.cookies| grep -Po '(?<=csrftoken=)[^;]*')
  did=$(cat 6071.cookies|grep -Po '(?<=ig_did=)[^;]*')
  ses=$(cat 6071.cookies|grep -Po '(?<=sessionid=)[^;]*')
@@ -106,7 +105,7 @@ function gete(){
   -H 'x-requested-with: XMLHttpRequest' \
   -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" \
   -H "x-csrftoken: $csrf" \
-  -H "cookie: ig_did=${did};rur=VLL; csrftoken=${csrf}; ds_user_id=${usid}; sessionid=${ses}" --compressed -s
+  -H "cookie: mid=${id};ig_did=${did};rur=VLL; csrftoken=${csrf}; ds_user_id=${usid}; sessionid=${ses}" --compressed -s
 )
         status=$(echo -e "$x" |grep -Po '(?<=status":")[^"]*')
                  printf "${H}[#]${N}$status (mdaID) -> $ea${N}\n"
