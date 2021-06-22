@@ -4,13 +4,22 @@
 # CREATE ON 20:06 SELESAI JAM 23:26
 useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
 ############ COLORRRRRR ################
-########################################
 H=$(tput setaf 2)
 M=$(tput setaf 1)
 N=$(tput sgr0)
 B=$(tput setaf 6)
 Y=$(tput setaf 3)
+########################################
+script_name=$0
+############ encoding ##################
+export LANG=C.UTF-8
+#######################################
+:'
+
+'
+############ TIME ######################
 time=$(date +%s%N|cut -b1-13)
+########################################
 function log() {
     function logline() {
         colorprint $1 "[$script_name] $2: $3"
@@ -148,3 +157,4 @@ login $EMAIL $PASS $penambahan $number &
 hitung=$[$hitung+1]
 done
 wait
+
