@@ -11,6 +11,10 @@ N=$(tput sgr0)
 B=$(tput setaf 6)
 Y=$(tput setaf 3)
 time=$(date +%s%N|cut -b1-13)
+function log() {
+    function logline() {
+        colorprint $1 "[$script_name] $2: $3"
+    }
 function random(){
                OLDIFS=$IFS
 IFS=$(echo -en "\n\b")
@@ -108,6 +112,9 @@ function gete(){
                  printf "${H}[#]${N}$status (mdaID) -> $ea${N}\n"
     done
     rm -rf NAH.txt
+}
+function colorprint() {
+    echo -e "\033[$1m$2\033[0m" 
 }
 echo -e "
 ${N}create by - ( ${B}widhisec )
