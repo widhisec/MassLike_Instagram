@@ -25,7 +25,7 @@ apt-get install python
 <p align=center>
 <img alt="shell script" src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white" width="300" /><br>
 
-**⚠ WARNING: if there is no response**
+## **⚠ WARNING: if there is no response**
 just the Instagram link that you just gave is wrong
 please show it correctly again and if it still happens
 contact me, thank you for visiting
