@@ -116,8 +116,8 @@ IFS=$'\n'
   -H "x-csrftoken: $csrf" \
   -H "cookie: mid=${id};ig_did=${did};rur=VLL; csrftoken=${csrf}; ds_user_id=${usid}; sessionid=${ses}" --compressed -s
 )
-        status=$(echo -e "$x" |grep -Po '(?<=status":")[^"]*')
-                 printf "${H}[#]${N}$status (mdaID) -> $ea${N}\n"
+        TUSS=$(echo -e "$x" |grep -Po '(?<=status":")[^"]*')
+                 printf "%s[#]%s%s (mdaID) -> %s%s\n" "${H}" "${N}" "${TUSS}" "${ea}" "${N}"
     done
     rm -rf NAH.txt
 }
