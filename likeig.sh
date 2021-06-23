@@ -143,7 +143,7 @@ if [[ $kamu == 0 && $hitung > 0 ]]; then
 sleep 1
 fi
 login $EMAIL $PASS $NUMBER &
-hitung=$[$hitung+1]
+hitung=$(($hitung+1))
 done
 wait
 
