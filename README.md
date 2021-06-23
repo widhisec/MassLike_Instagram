@@ -52,3 +52,7 @@ contact me, thank you for visiting
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 <br/>
 [MIT](./LICENSE)
+
+### Check the photos you like 
+please go to settings found on instagram
+you should go to the account page and then restore the liked post
