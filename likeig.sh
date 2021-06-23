@@ -86,10 +86,10 @@ function gaskan(){
           Fruits[2]="sessionid"
           #find=$(find *.cookies -type f)
           mapfile -t oke < <(cat *.cookies)
-          x=$(echo "${Fruits[0]}")
-          b=$(echo "${Fruits[1]}")
-          p=$(echo "${Fruits[2]}")
-	  /bin/true ; echo $? 
+          x=$(/bin/true|echo "${Fruits[0]}")
+          b=$(/bin/true|echo "${Fruits[1]}")
+          p=$(/bin/true|echo "${Fruits[2]}")
+	  #;echo $? 
 }
 function open(){
           for URL in $(cat fot.txt); do
