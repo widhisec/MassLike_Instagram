@@ -56,3 +56,11 @@ contact me, thank you for visiting
 ### Check the photos you like 
 please go to settings found on instagram
 you should go to the account page and then restore the liked post
+  
+<div class="icons-git"></div>
+<img src="https://img.icons8.com/color/64/000000/git.png"/>
+
+### Download Now
+```
+git clone --depth 1 https://github.com/widhisec/MassLike_Instagram
+```
