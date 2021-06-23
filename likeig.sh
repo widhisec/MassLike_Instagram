@@ -105,6 +105,7 @@ function gete(){
  ses=$(cat 6071.cookies|grep -Po '(?<=sessionid=)[^;]*')
       v=$(open)
        echo -e "$v" >> NAH.txt
+IFS=$'\n'
        for ea in $(cat NAH.txt);do
            x=$(curl "https://www.instagram.com/web/likes/${ea}/like/" \
   -X 'POST' \
