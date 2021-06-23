@@ -89,6 +89,7 @@ function gaskan(){
           x=$(echo "${Fruits[0]}")
           b=$(echo "${Fruits[1]}")
           p=$(echo "${Fruits[2]}")
+	  /bin/true ; echo $? 
 }
 function open(){
           for URL in $(cat fot.txt); do
