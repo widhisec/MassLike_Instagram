@@ -1,4 +1,4 @@
-# 
+# di baca ya biar jelas kawan selamat menikmati
 <div align="center">
   <h1>Masslike-instagram</h1>
  
@@ -20,8 +20,8 @@ apt-get install ncurses-utils
 apt-get install python
 ```
 ### Screenshot
-<img src="https://raw.githubusercontent.com/widhisec/MassLike_Instagram/master/foto/autolike.png"/>
-<p align=center>
+<img src="https://raw.githubusercontent.com/widhisec/MassLike_Instagram/master/foto/IMG_20210623_121719.jpg"/>
+<p align='center'>
 <img alt="shell script" src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white" width="300" /><br>
 
 ## **⚠ WARNING: if there is no response**
