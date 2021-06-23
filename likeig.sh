@@ -22,6 +22,7 @@ function log() {
     function logline() {
         colorprint $1 "[$script_name] $2: $3"
     }
+}
 function random(){
                OLDIFS=$IFS
                IFS=$(echo -en "\n\b")
