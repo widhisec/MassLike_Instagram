@@ -94,6 +94,7 @@ function open(){
           done
 }
 function gete(){
+  echo ${oke[31]}|grep -Po "(?<=$b=)[^;]*"
   gaskan
   ### MANUAL 
    csrf=$(cat 6071.cookies| grep -Po '(?<=csrftoken=)[^;]*')
