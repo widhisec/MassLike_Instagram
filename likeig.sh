@@ -78,6 +78,8 @@ function idd() {
             -H 'accept: */*' --compressed)|grep -Po '(?<=__typename":"GraphImage","id":").*?(?=")'|sort -u
 }
 function gaskan(){
+          # consumed. Consider having the pipefail option
+          set -o pipefail
           Fruits=('csrftoken' 'ig_did' 'sessionid')
           Fruits[0]="csrftoken"
           Fruits[1]="ig_did"
@@ -142,7 +144,7 @@ EMAIL=${array[0]}
 PASS=${array[1]}
 NUMBER=$((nomor++))
 kamu=$(expr $hitung % 1)
-if [[  $kamu -eq 0 || $hitung -eq 1 ]]; then
+if [[  $kamu -eq 0 || $hitung -eq 0 ]]; then
 sleep 1
 fi
 login $EMAIL $PASS $NUMBER &
