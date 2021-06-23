@@ -128,7 +128,7 @@ echo "Delimeter list -> email|password"
 echo -n "Masukan File List : "
 read USERmailist;
 nomor=1
-jumlahlines=$(cat $USERmailist | wc -l | cut -f1 -d' ')
+jumlahlines=$(cat $USERmailist | wc -l <(cut -f1 -d' ')
 hitung=0
 IFS=$'\r\n' GLOBIGNORE='*' command eval 'bacot=($(cat $USERmailist))'
 waktumulai=$(date +%s)
