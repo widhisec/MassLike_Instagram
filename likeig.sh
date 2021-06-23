@@ -67,14 +67,14 @@ function login() {
         
 }
 function idd() { 
-	    curl -s "${URL}" --location -A "${useragent}" \
+	    (curl -s "${URL}" --location -A "${useragent}" \
 	    -H 'accept-language: en-US,en;q=0.9' \
             -H 'x-requested-with: XMLHttpRequest' \
             -H "cookie: csrftoken=$csrf" \
             -H "x-csrftoken: $csrf" \
             -H "x-instagram-ajax: $rolout" \
             -H 'content-type: application/x-www-form-urlencoded' \
-            -H 'accept: */*' --compressed|grep -Po '(?<=__typename":"GraphImage","id":").*?(?=")'|sort -u
+            -H 'accept: */*' --compressed)|grep -Po '(?<=__typename":"GraphImage","id":").*?(?=")'|sort -u
 }
 function oke(){
           Fruits=('csrftoken' 'ig_did' 'sessionid')
