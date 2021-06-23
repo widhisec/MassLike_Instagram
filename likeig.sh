@@ -77,21 +77,16 @@ function idd() {
             -H 'content-type: application/x-www-form-urlencoded' \
             -H 'accept: */*' --compressed)|grep -Po '(?<=__typename":"GraphImage","id":").*?(?=")'|sort -u
 }
-function oke(){
+function gaskan(){
           Fruits=('csrftoken' 'ig_did' 'sessionid')
           Fruits[0]="csrftoken"
           Fruits[1]="ig_did"
           Fruits[2]="sessionid"
-          find=$(find *.cookies -type f)
-         for i in "${find[@]}"; do
-           local x=$(echo "${Fruits[0]}")
-           local b=$(echo "${Fruits[1]}")
-           local p=$(echo "${Fruits[2]}")
-           local c=$(cat $i|grep -Po "(?<=$x=)[^;]*")
-           local d=$(cat $i|grep -Po "(?<=$b=)[^;]*")
-           local s=$(cat $i|grep -Po "(?<=$p=)[^;]*")
-           for haha in $c;do echo $haha;done
-         done
+          #find=$(find *.cookies -type f)
+          mapfile -t oke < <(cat *.cookies)
+          x=$(echo "${Fruits[0]}")
+          b=$(echo "${Fruits[1]}")
+          p=$(echo "${Fruits[2]}")
 }
 function open(){
           for URL in $(cat fot.txt); do
@@ -99,7 +94,8 @@ function open(){
           done
 }
 function gete(){
-  oke
+  #gaskan
+  ### MANUAL 
    csrf=$(cat 6071.cookies| grep -Po '(?<=csrftoken=)[^;]*')
  did=$(cat 6071.cookies|grep -Po '(?<=ig_did=)[^;]*')
  ses=$(cat 6071.cookies|grep -Po '(?<=sessionid=)[^;]*')
