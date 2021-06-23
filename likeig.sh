@@ -27,8 +27,13 @@ function random(){
                IFS=$OLDIFS
 }
 function login() {
-         find=$(find *.cookies -type f)
-         if ! [[ -e "$find" ]]; then
+          i='/data/data/com.termux/files/home/MassLike_Instagram'
+          j='*.cookies'
+          y=$i/$j                                                           
+	  readarray -t files < <(compgen -G "$y") # 
+         #find=$(find *.cookies -type f)
+         if [[ ! -e $files ]];then                                                 
+	    for i in "${files[@]}";do echo "Found -$i-";done
             random
             printf "\n%s[+]%sLogining in..\n" "${H}" "${N}"
             local ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' \
