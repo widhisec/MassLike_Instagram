@@ -30,7 +30,7 @@ function login() {
          find=$(find *.cookies -type f)
          if ! [[ -e "$find" ]]; then
             random
-            printf "\n${H}[+]${N}Logining in..\n"
+            printf "\n%s[+]%sLogining in..\n" "${H}" "${N}"
             local ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' \
                   -H "user-agent: $useragent" \
                   -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' \
