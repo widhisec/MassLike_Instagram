@@ -35,6 +35,8 @@ function login() {
          #find=$(find *.cookies -type f)
          if [[ ! -e $files ]];then                                                 
 	    for i in "${files[@]}";do echo "Found -${SCRIPT_DIR}-";done
+	    gete
+	else
             random
             printf "\n%s[+]%sLogining in..\n" "${H}" "${N}"
             local ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' \
@@ -59,9 +61,6 @@ function login() {
         local isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')
         local session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')
         echo "${login}" >> $randomNumber.cookies
-    else
-        gete
-            
         fi
 	      
         
