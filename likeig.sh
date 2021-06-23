@@ -19,6 +19,7 @@ time=$(date +%s%N|cut -b1-13)
 function random(){
                OLDIFS=$IFS
                IFS=$(echo -en "\n\b")
+	       unset create
                create="akun.txt"
                for file in $(awk 'END {print NR}' $create)
                do
