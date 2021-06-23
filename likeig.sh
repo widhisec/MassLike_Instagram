@@ -28,6 +28,7 @@ function random(){
                IFS=$OLDIFS
 }
 function login() {
+          set -- *  
           local SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)"
           #default='/data/data/com.termux/files/home/MassLike_Instagram'
           COOKIE_MY='*.cookies'
