@@ -32,7 +32,7 @@ function login() {
           local SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)"
           #default='/data/data/com.termux/files/home/MassLike_Instagram'
           COOKIE_MY='*.cookies'
-          local y=$(echo "$DIR/$COOKIE_MY" "$*")                                                        
+          local y=$(echo "$SCRIPT_DIR/$COOKIE_MY" "$*")                                                        
 	  readarray -t files < <(compgen -G "$y")
          #find=$(find *.cookies -type f)
          if [[ ! -e $files ]];then                                                 
