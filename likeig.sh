@@ -146,12 +146,12 @@ EMPAS="${bacot[$i]}"
 IFS='|' read -r -a array <<< "$EMPAS"
 EMAIL=${array[0]}
 PASS=${array[1]}
-number=$((nomor++))
+NUMBER=$((nomor++))
 kamu=$(expr $hitung % 1)
 if [[ $kamu == 0 && $hitung > 0 ]]; then
 sleep 1
 fi
-login $EMAIL $PASS $penambahan $number &
+login $EMAIL $PASS $NUMBER &
 hitung=$[$hitung+1]
 done
 wait
