@@ -31,12 +31,9 @@ function login() {
           #default='/data/data/com.termux/files/home/MassLike_Instagram'
           COOKIE_MY='*.cookies'
           local y=${SCRIPT_DIR}/${COOKIE_MY}                                                          
-	  (readarray -t files < <(compgen -G "$y")) 
+	  readarray -t files < <(compgen -G "$y")
          #find=$(find *.cookies -type f)
          if [[ ! -e $files ]];then                                                 
-	    for i in "${files[@]}";do echo "Found -${SCRIPT_DIR}-";done
-	    gete
-	else
             random
             printf "\n%s[+]%sLogining in..\n" "${H}" "${N}"
             local ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' \
@@ -56,11 +53,14 @@ function login() {
                    -H 'content-type: application/x-www-form-urlencoded' \
                    -H 'accept: */*' \
                    -H 'referer: https://www.instagram.com/accounts/login/' --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL)     
-        local check=$(echo -e "$login" | grep -Po '(?<=checkpoint_url":")[^"]*')
-        local usid=$(echo -e "$login" | grep -Po '(?<=userId":")[^"]*'|sort -u)
-        local isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')
-        local session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')
-        echo "${login}" >> $randomNumber.cookies
+             local check=$(echo -e "$login" | grep -Po '(?<=checkpoint_url":")[^"]*')
+             local usid=$(echo -e "$login" | grep -Po '(?<=userId":")[^"]*'|sort -u)
+             local isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')
+             local session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')
+             echo "${login}" >> $randomNumber.cookies
+        else
+	     for i in "${files[@]}";do echo "Found -${SCRIPT_DIR}-";done
+	     gete
         fi
 	      
         
