@@ -22,9 +22,7 @@ apt-get install python
 ### Screenshot
 <img src="https://raw.githubusercontent.com/widhisec/MassLike_Instagram/master/foto/IMG_20210623_121719.jpg"/>
 
-### Powered By
-<p align='center'>
-<img alt="shell script" src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white" width="300" /><br>
+### Powered By <img alt="shell script" src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white" width="300" /><br>
 
 ## **⚠ WARNING: if there is no response**
 just the Instagram link that you just gave is wrong
@@ -56,11 +54,9 @@ contact me, thank you for visiting
 ### Check the photos you like 
 please go to settings found on instagram
 you should go to the account page and then restore the liked post
-  
-<div class="icons-git"></div>
-<img src="https://img.icons8.com/color/64/000000/git.png"/>
 
-### Download Now
+### Download Now <img src="https://img.icons8.com/color/50/000000/git.png"/>
+
 ```
 git clone --depth 1 https://github.com/widhisec/MassLike_Instagram
 ```
