@@ -22,7 +22,7 @@ function random(){
                create="akun.txt"
                for file in $(awk 'END {print NR}' $create)
                do
-                   randomNumber=$(($RANDOM*$file))
+                   randomNumber=$(($RANDOM))
                done
                IFS=$OLDIFS
 }
