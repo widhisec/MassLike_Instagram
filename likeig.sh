@@ -94,7 +94,7 @@ function open(){
           done
 }
 function gete(){
-  #gaskan
+  gaskan
   ### MANUAL 
    csrf=$(cat 6071.cookies| grep -Po '(?<=csrftoken=)[^;]*')
  did=$(cat 6071.cookies|grep -Po '(?<=ig_did=)[^;]*')
