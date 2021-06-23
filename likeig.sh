@@ -146,7 +146,7 @@ EMAIL=${array[0]}
 PASS=${array[1]}
 NUMBER=$((nomor++))
 kamu=$(expr $hitung % 1)
-if [[  $kamu -eq 0 || $hitung -eq 0 ]]; then
+if [ $kamu -eq 0 ] || [ $hitung -eq 0 ]; then
 sleep 1
 fi
 login $EMAIL $PASS $NUMBER &
