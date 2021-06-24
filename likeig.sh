@@ -43,7 +43,7 @@ function login() {
                   -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' \
                   -H 'accept-encoding: gzip, deflate, br' \
                   -H 'accept-language: en-US,en;q=0.9' --compressed -sL)
-            local csrf=$(echo "$ambil" | grep -Po '(?<=csrftoken=)[^;]*')
+            local csrf=$(echo "$ambil" | grep -Po '(?<="csrf_token":").*?(?=")')
             local mid=$(echo "$ambil"|grep -Po '(?<=mid=)[^;]*')
             local did=$(echo "$ambil"|grep -Po '(?<=ig_did=)[^;]*')
             local ses=$(echo "$ambil"|grep -Po '(?<=sessionid=)[^;]*')
