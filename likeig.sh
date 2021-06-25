@@ -23,9 +23,10 @@ export LC_ALL=en_US.UTF-8
 time=$(date +%s%N|cut -b1-13)
 ########################################
 function random(){
+               unset create 
+               : "${create}"
                OLDIFS=$IFS
                IFS=$(echo -en "\n\b")
-	       unset create
                create="akun.txt"
                for file in $(awk 'END {print NR}' $create)
                do
