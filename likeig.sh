@@ -1,13 +1,14 @@
 #!/bin/bash
-# widhisec
+# WIDHI$EC
 # TOLONG YA HARGAI PEMBUAT NYA
 # CREATE ON 20:06 SELESAI JAM 23:26
-# bisa di ubah tapi kesalahan erorr tanggung
-# jawab sendiri ya bukan salah saya lagian terima kasih sudah 
-# mencoba jangan lupa bagikan kesemua orang agar tahu..
-# memang sedikit tapi mencarinya tidak semudah di bayangkan kalian kira
-# harap mengerti jangan lupa kasih star masa lihat doang gak 
-# di kasih kasian saya dong wkwk 
+# BISA DI UBAH TAPI KESALAHAN ERORR TANGGUNG
+# JAWAB SENDIRI YA BUKAN SALAH SAYA LAGIAN TERIMA KASIH SUDAH 
+# MENCOBA JANGAN LUPA BAGIKAN KESEMUA ORANG AGAR TAHU..
+# MEMANG SEDIKIT TAPI MENCARINYA TIDAK SEMUDAH DI BAYANGKAN KALIAN KIRA
+# HARAP MENGERTI JANGAN LUPA KASIH STAR MALAH LIHAT DOANG MASA GAK 
+# DI KASIH KASIAN SAYA DONG WKWK SEIKLAS NYA AJA YA HEHE
+# <3 
 useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
 # consumed. Consider having the pipefail option
 # silence this warning
