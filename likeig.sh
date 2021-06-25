@@ -47,21 +47,38 @@ function login() {
             local mid=$(echo "$ambil"|grep -Po '(?<=mid=)[^;]*')
             local did=$(echo "$ambil"|grep -Po '(?<=ig_did=)[^;]*')
             local ses=$(echo "$ambil"|grep -Po '(?<=sessionid=)[^;]*')
-            login=$(curl -D - 'https://www.instagram.com/accounts/login/ajax/' \
-                   -H 'origin: https://www.instagram.com' \
-                   -H 'x-requested-with: XMLHttpRequest' \
-                   -H "user-agent: $useragent" \
-                   -H "x-csrftoken: $csrf" \
-                   -H 'content-type: application/x-www-form-urlencoded' \
-                   -H 'accept: */*' \
-                   -H 'referer: https://www.instagram.com/accounts/login/' --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL)     
+	    local login=$(curl 'https://www.instagram.com/accounts/login/ajax/' -sS \
+            -X 'POST' \
+            -H 'authority: www.instagram.com' \
+            -H 'content-type: application/x-www-form-urlencoded' \
+            -H 'accept: */*' \
+            -H 'x-requested-with: XMLHttpRequest' \
+            -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36' \
+            -H "x-csrftoken: $csrf" \
+            -H 'x-ig-app-id: 936619743392459' \
+            -H 'origin: https://www.instagram.com' \
+            -H 'referer: https://www.instagram.com/' \
+            -H 'accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7' \
+            -H "cookie: mid=$mid; ig_did=$did; csrftoken=$csrf;" \
+           --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL -D -)
+            # login=$(curl -D - 'https://www.instagram.com/accounts/login/ajax/' \
+            #        -H 'origin: https://www.instagram.com' \
+            #        -H 'x-requested-with: XMLHttpRequest' \
+            #        -H "user-agent: $useragent" \
+            #        -H "x-csrftoken: $csrf" \
+            #        -H 'content-type: application/x-www-form-urlencoded' \
+            #        -H 'accept: */*' \
+            #        -H 'referer: https://www.instagram.com/accounts/login/' --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL)   
              local check=$(echo -e "$login" | grep -Po '(?<=checkpoint_url":")[^"]*')
              local usid=$(echo -e "$login" | grep -Po '(?<=userId":")[^"]*'|sort -u)
              local isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')
              local session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')
              echo "${login}" >> $randomNumber.cookies
         else
-	     for i in "${files[@]}";do echo "Found -${SCRIPT_DIR}-";done
+	     for i in "${files[@]}";
+	     do 
+	     echo "Found -${SCRIPT_DIR}-";
+	     done
 	     gete
         fi
 	      
