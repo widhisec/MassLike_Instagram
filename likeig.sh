@@ -9,6 +9,8 @@ set -o pipefail
 set -eu
 unset INDONESIA
 unset APP_ID
+unset CREATE
+: "${CREATE}"
 : "${INDONESIA}"
 : "${APP_ID}"
 INDONESIA=("id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7")
@@ -27,15 +29,13 @@ export LC_ALL=en_US.UTF-8
 time=$(date +%s%N|cut -b1-13)
 ########################################
 function random(){
-               unset create 
-               : "${create}"
                OLDIFS=$IFS
                IFS=$(echo -en "\n\b")
-               create=("akun.txt")
-	       while read -r create
+               CREATE=("akun.txt")
+	       while read -r CREATE
                do
                    randomNumber=$(($RANDOM))
-               done <<<  "$(awk 'END {print NR}' "$file")"
+               done <<<  "$(awk 'END {print NR}' "$CREATE")"
                IFS=$OLDIFS
 }
 function login() {
