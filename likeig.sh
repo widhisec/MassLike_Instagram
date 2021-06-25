@@ -4,7 +4,9 @@
 # CREATE ON 20:06 SELESAI JAM 23:26
 useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
 # consumed. Consider having the pipefail option
+# silence this warning
 set -o pipefail
+set -eu
 unset INDONESIA
 unset APP_ID
 : "${INDONESIA}"
@@ -29,11 +31,11 @@ function random(){
                : "${create}"
                OLDIFS=$IFS
                IFS=$(echo -en "\n\b")
-               create="akun.txt"
-               for file in $(awk 'END {print NR}' $create)
+               create=("akun.txt")
+	       while read -r create
                do
                    randomNumber=$(($RANDOM))
-               done
+               done <<<  "$(awk 'END {print NR}' "$file")"
                IFS=$OLDIFS
 }
 function login() {
@@ -43,9 +45,9 @@ function login() {
           #default='/data/data/com.termux/files/home/MassLike_Instagram'
           COOKIE_MY='*.cookies'
           local y=$(/bin/true|echo "$SCRIPT_DIR/$COOKIE_MY")                                                        
-	  readarray -t files < <(compgen -G "$y")
+	  readarray -t FILES_MY < <(compgen -G "$y")
          #find=$(find *.cookies -type f)
-          if [[ ! -e ${files[@]} ]];then                                                 
+          if [[ ! -e  "${FILES_MY[0]}" ]];then                                                 
             random
             printf "\n%s[+]%sLogining in..\n" "${H}" "${N}"
             local ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' \
