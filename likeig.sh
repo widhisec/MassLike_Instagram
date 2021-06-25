@@ -37,6 +37,7 @@ function random(){
 function login() {
           set -- *  
           local SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)"
+	  declare -i SCRIPT_DIR
           #default='/data/data/com.termux/files/home/MassLike_Instagram'
           COOKIE_MY='*.cookies'
           local y=$(echo "$SCRIPT_DIR/$COOKIE_MY" "$*")                                                        
