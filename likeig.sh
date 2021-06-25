@@ -1,7 +1,13 @@
 #!/bin/bash
-# widhisec ~ ZSECC0DE-CREW-ID
+# widhisec
 # TOLONG YA HARGAI PEMBUAT NYA
 # CREATE ON 20:06 SELESAI JAM 23:26
+# bisa di ubah tapi kesalahan erorr tanggung
+# jawab sendiri ya bukan salah saya lagian terima kasih sudah 
+# mencoba jangan lupa bagikan kesemua orang agar tahu..
+# memang sedikit tapi mencarinya tidak semudah di bayangkan kalian kira
+# harap mengerti jangan lupa kasih star masa lihat doang gak 
+# di kasih kasian saya dong wkwk 
 useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
 # consumed. Consider having the pipefail option
 # silence this warning
@@ -84,6 +90,7 @@ function login() {
              local check=$(echo -e "$login" | grep -Po '(?<=checkpoint_url":")[^"]*')
              local usid=$(echo -e "$login" | grep -Po '(?<=userId":")[^"]*'|sort -u)
              local isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')
+	     # perbedaan .
              local session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')
              echo "${login}" >> $randomNumber.cookies
         else
@@ -116,7 +123,7 @@ function gaskan(){
           x=$(/bin/true|echo "${Fruits[0]}")
           b=$(/bin/true|echo "${Fruits[1]}")
           p=$(/bin/true|echo "${Fruits[2]}")
-	  #;echo $? 
+	  #;echo $? false or true?..
 }
 function open(){
           for URL in $(cat fot.txt); do
@@ -132,7 +139,7 @@ function gete(){
  ses=$(cat 6071.cookies|grep -Po '(?<=sessionid=)[^;]*')
       v=$(open)
        echo -e "$v" >> NAH.txt
-IFS=$'\n'
+        IFS=$'\n'
        for ea in $(cat NAH.txt);do
            x=$(curl "https://www.instagram.com/web/likes/${ea}/like/" \
   -X 'POST' \
