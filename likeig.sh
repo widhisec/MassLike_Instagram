@@ -196,4 +196,6 @@ login $EMAIL $PASS $NUMBER &
 hitung=$(($hitung+1))
 done
 wait
+# Copyright © 2021 
+# All rights reserved.
 
