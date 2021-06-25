@@ -3,6 +3,8 @@
 # TOLONG YA HARGAI PEMBUAT NYA
 # CREATE ON 20:06 SELESAI JAM 23:26
 useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+# consumed. Consider having the pipefail option
+set -o pipefail
 unset INDONESIA
 unset APP_ID
 : "${INDONESIA}"
@@ -40,7 +42,7 @@ function login() {
 	  declare -i SCRIPT_DIR
           #default='/data/data/com.termux/files/home/MassLike_Instagram'
           COOKIE_MY='*.cookies'
-          local y=$(echo "$SCRIPT_DIR/$COOKIE_MY" "$*")                                                        
+          local y=$(/bin/true|echo "$SCRIPT_DIR/$COOKIE_MY")                                                        
 	  readarray -t files < <(compgen -G "$y")
          #find=$(find *.cookies -type f)
           if [[ ! -e $files ]];then                                                 
@@ -103,8 +105,6 @@ function idd() {
             -H 'accept: */*' --compressed)|grep -Po '(?<=__typename":"GraphImage","id":").*?(?=")'|sort -u
 }
 function gaskan(){
-          # consumed. Consider having the pipefail option
-          set -o pipefail
           Fruits=('csrftoken' 'ig_did' 'sessionid')
           Fruits[0]="csrftoken"
           Fruits[1]="ig_did"
