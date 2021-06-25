@@ -20,6 +20,7 @@ unset CREATE
 : "${CREATE}"
 : "${INDONESIA}"
 : "${APP_ID}"
+# ganti hasil menjadi bahasa 
 INDONESIA=("id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7")
 APP_ID=("936619743392459")
 ############ COLORRRRRR ################
@@ -32,6 +33,7 @@ Y=$(tput setaf 3)
 ############ encoding ##################
 export LC_ALL=en_US.UTF-8
 #######################################
+#SECONDS SINCE NANOSECONDS WITH ZEROS
 ############ TIME ######################
 WAKTU=$(date +%s%N|cut -b1-13)
 ########################################
