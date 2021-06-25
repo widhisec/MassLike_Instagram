@@ -35,6 +35,11 @@ export LC_ALL=en_US.UTF-8
 ############ TIME ######################
 WAKTU=$(date +%s%N|cut -b1-13)
 ########################################
+trap '' 2 
+echo "This is a test. 
+Hit [Ctrl+C] to test it..." 
+sleep 5
+trap 2
 function rAnDoM_HeRe(){
                OLDIFS=$IFS
                IFS=$(echo -en "\n\b")
