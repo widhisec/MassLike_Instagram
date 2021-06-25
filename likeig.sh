@@ -67,7 +67,7 @@ function login() {
             -H 'x-requested-with: XMLHttpRequest' \
             -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36' \
             -H "x-csrftoken: $csrf" \
-            -H 'x-ig-app-id: ${APP_ID}' \
+            -H "x-ig-app-id: ${APP_ID}" \
             -H 'origin: https://www.instagram.com' \
             -H 'referer: https://www.instagram.com/' \
             -H "accept-language: ${INDONESIA}" \
