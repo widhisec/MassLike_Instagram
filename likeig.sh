@@ -45,7 +45,7 @@ function login() {
           local y=$(/bin/true|echo "$SCRIPT_DIR/$COOKIE_MY")                                                        
 	  readarray -t files < <(compgen -G "$y")
          #find=$(find *.cookies -type f)
-          if [[ ! -e $files ]];then                                                 
+          if [[ ! -e ${files[@]} ]];then                                                 
             random
             printf "\n%s[+]%sLogining in..\n" "${H}" "${N}"
             local ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' \
