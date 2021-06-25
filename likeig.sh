@@ -3,6 +3,8 @@
 # TOLONG YA HARGAI PEMBUAT NYA
 # CREATE ON 20:06 SELESAI JAM 23:26
 useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+indonesia=("id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7")
+APP_ID=("936619743392459")
 ############ COLORRRRRR ################
 H=$(tput setaf 2)
 M=$(tput setaf 1)
@@ -35,7 +37,7 @@ function login() {
           local y=$(echo "$SCRIPT_DIR/$COOKIE_MY" "$*")                                                        
 	  readarray -t files < <(compgen -G "$y")
          #find=$(find *.cookies -type f)
-         if [[ ! -e $files ]];then                                                 
+          if [[ ! -e $files ]];then                                                 
             random
             printf "\n%s[+]%sLogining in..\n" "${H}" "${N}"
             local ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' \
@@ -55,10 +57,10 @@ function login() {
             -H 'x-requested-with: XMLHttpRequest' \
             -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36' \
             -H "x-csrftoken: $csrf" \
-            -H 'x-ig-app-id: 936619743392459' \
+            -H 'x-ig-app-id: ${APP_ID}' \
             -H 'origin: https://www.instagram.com' \
             -H 'referer: https://www.instagram.com/' \
-            -H 'accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7' \
+            -H "accept-language: ${indonesia}" \
             -H "cookie: mid=$mid; ig_did=$did; csrftoken=$csrf;" \
            --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL -D -)
             # login=$(curl -D - 'https://www.instagram.com/accounts/login/ajax/' \
