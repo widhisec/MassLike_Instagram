@@ -33,9 +33,9 @@ Y=$(tput setaf 3)
 export LC_ALL=en_US.UTF-8
 #######################################
 ############ TIME ######################
-time=$(date +%s%N|cut -b1-13)
+WAKTU=$(date +%s%N|cut -b1-13)
 ########################################
-function random(){
+function rAnDoM_HeRe(){
                OLDIFS=$IFS
                IFS=$(echo -en "\n\b")
                CREATE=("akun.txt")
@@ -55,7 +55,7 @@ function login() {
 	  readarray -t FILES_MY < <(compgen -G "$y")
          #find=$(find *.cookies -type f)
           if [[ ! -e  "${FILES_MY[0]}" ]];then                                                 
-            random
+            rAnDoM_HeRe
             printf "\n%s[+]%sLogining in..\n" "${H}" "${N}"
             local ambil=$(curl -D - 'https://www.instagram.com/accounts/login/' \
                   -H "user-agent: $useragent" \
@@ -79,7 +79,7 @@ function login() {
             -H 'referer: https://www.instagram.com/' \
             -H "accept-language: ${INDONESIA}" \
             -H "cookie: mid=$mid; ig_did=$did; csrftoken=$csrf;" \
-           --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL -D -)
+           --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${WAKTU}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL -D -)
             # login=$(curl -D - 'https://www.instagram.com/accounts/login/ajax/' \
             #        -H 'origin: https://www.instagram.com' \
             #        -H 'x-requested-with: XMLHttpRequest' \
