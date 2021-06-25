@@ -3,7 +3,11 @@
 # TOLONG YA HARGAI PEMBUAT NYA
 # CREATE ON 20:06 SELESAI JAM 23:26
 useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
-indonesia=("id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7")
+unset INDONESIA
+unset APP_ID
+: "${INDONESIA}"
+: "${APP_ID}"
+INDONESIA=("id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7")
 APP_ID=("936619743392459")
 ############ COLORRRRRR ################
 H=$(tput setaf 2)
@@ -60,7 +64,7 @@ function login() {
             -H 'x-ig-app-id: ${APP_ID}' \
             -H 'origin: https://www.instagram.com' \
             -H 'referer: https://www.instagram.com/' \
-            -H "accept-language: ${indonesia}" \
+            -H "accept-language: ${INDONESIA}" \
             -H "cookie: mid=$mid; ig_did=$did; csrftoken=$csrf;" \
            --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL -D -)
             # login=$(curl -D - 'https://www.instagram.com/accounts/login/ajax/' \
