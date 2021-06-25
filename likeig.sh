@@ -13,7 +13,6 @@ useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko
 # consumed. Consider having the pipefail option
 # silence this warning
 set -o pipefail
-set -e
 unset INDONESIA
 unset APP_ID
 unset CREATE
