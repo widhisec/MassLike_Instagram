@@ -67,7 +67,7 @@ function login() {
 				-H "user-agent: $useragent" \
 				-H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' \
 				-H 'accept-encoding: gzip, deflate, br' \
-			-H 'accept-language: en-US,en;q=0.9' --compressed -sL)
+			        -H 'accept-language: en-US,en;q=0.9' --compressed -sL)
 		local csrf=$(echo "$ambil" | grep -Po '(?<="csrf_token":").*?(?=")')
 		local mid=$(echo "$ambil"|grep -Po '(?<=mid=)[^;]*')
 		local did=$(echo "$ambil"|grep -Po '(?<=ig_did=)[^;]*')
@@ -85,7 +85,7 @@ function login() {
 				-H 'referer: https://www.instagram.com/' \
 				-H "accept-language: ${INDONESIA}" \
 				-H "cookie: mid=$mid; ig_did=$did; csrftoken=$csrf;" \
-			--data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${WAKTU}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL -D -)
+			        --data-urlencode "username=${1}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${WAKTU}:${2}" --data-urlencode "optIntoOneTap=false" --compressed -sL -D -)
 		# login=$(curl -D - 'https://www.instagram.com/accounts/login/ajax/' \
 			#        -H 'origin: https://www.instagram.com' \
 			#        -H 'x-requested-with: XMLHttpRequest' \
