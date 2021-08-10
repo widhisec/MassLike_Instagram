@@ -1,4 +1,5 @@
 # di baca ya biar jelas kawan selamat menikmati
+# ada yang gak jelas di perbaiki ya kawan..!
 <div align="center">
   <h1>Masslike-instagram</h1>
  
