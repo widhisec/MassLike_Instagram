@@ -41,8 +41,7 @@ function login() {
 			-H 'referer: https://www.instagram.com/accounts/login/' --data-urlencode "username=${EMAIL}" --data-urlencode "enc_password=#PWD_INSTAGRAM_BROWSER:0:${time}:${PASS}" --data-urlencode "optIntoOneTap=false" --compressed -sL)
 		#local check=$(echo -e "$login" | grep -Po '(?<=checkpoint_url":")[^"]*')
 		local usid=$(echo -e "$login" | grep -Po '(?<=userId":")[^"]*'|sort -u)
-		#local isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')
-		local session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')			
+		#local isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')		
 		echo "${login}" >> $EMAIL.cookies
 		echo "ID -> ${usid}"
 		gete
