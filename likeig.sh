@@ -42,7 +42,7 @@ function login() {
 		#local check=$(echo -e "$login" | grep -Po '(?<=checkpoint_url":")[^"]*')
 		local usid=$(echo -e "$login" | grep -Po '(?<=userId":")[^"]*'|sort -u)
 		#local isauth=$(echo -e "$login" | grep -Po '(?<="authenticated":)[^,]*')
-		#local session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')			
+		local session=$(echo -e "$login" | grep -Po '(?<=sessionid=)[^;]*')			
 		echo "${login}" >> $EMAIL.cookies
 		echo "ID -> ${usid}"
 		gete
